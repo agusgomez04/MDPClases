@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de Inscripción</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        
+        h2 {
+            color: #333;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        select,
+        input[type="submit"] {
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+        
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+    
+            var nombre = document.getElementById("nombre").value;
+            var apellido = document.getElementById("apellido").value;
+            var pais = document.getElementById("pais").value;
+            var email = document.getElementById("email").value;
+            var trabaja = document.getElementById("trabaja").value;
+    
+            alert("Datos ingresados:\n\nNombre: " + nombre + "\nApellido: " + apellido + "\nPaís: " + pais + "\nEmail: " + email + "\nTrabaja: " + trabaja);
+    
+            document.getElementById("myForm").reset();
+        }
+    </script>
+</head>
+<body>
+    <h2>Formulario de Registro</h2>
+    <form id="myForm" onsubmit="submitForm(event)">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required><br><br>
+    
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" required><br><br>
+    
+        <label for="pais">País:</label>
+        <select id="pais" required>
+            <option value="">Selecciona un país</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Brasil">Brasil</option>
+            <option value="México">México</option>
+            <option value="España">España</option>
+            <option value="Otros">Otros</option>
+        </select><br><br>
+    
+        <label for="email">Email:</label>
+        <input type="email" id="email" required><br><br>
+    
+        <label for="trabaja">¿Trabaja?:</label>
+        <select id="trabaja">
+            <option value="Sí">Sí</option>
+            <option value="No">No</option>
+        </select><br><br>
+    
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
